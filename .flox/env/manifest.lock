@@ -3,12 +3,18 @@
   "manifest": {
     "version": 1,
     "install": {
+      "click": {
+        "pkg-path": "python312Packages.click"
+      },
+      "pillow": {
+        "pkg-path": "python312Packages.pillow"
+      },
       "python3": {
-        "pkg-path": "python3"
+        "pkg-path": "python312"
       }
     },
     "hook": {
-      "on-activate": "  export PYTHON_DIR=\"$FLOX_ENV_CACHE/python\"\n  if [ ! -d \"$PYTHON_DIR\" ]; then\n    echo \"Creating python virtual environment in $PYTHON_DIR\"\n    python -m venv \"$PYTHON_DIR\"\n  fi\n\n  (\n    source \"$PYTHON_DIR/bin/activate\"\n    pip install -r \"$FLOX_ENV_PROJECT/requirements.txt\" --quiet\n  )\n"
+      "on-activate": ""
     },
     "profile": {
       "bash": "  source \"$PYTHON_DIR/bin/activate\"\n",
@@ -22,127 +28,368 @@
         "aarch64-linux",
         "x86_64-darwin",
         "x86_64-linux"
-      ],
-      "allow": {
-        "licenses": []
-      },
-      "semver": {}
+      ]
+    },
+    "build": {
+      "towebp": {
+        "command": "mkdir -p $out/bin\ncp towebp.py $out/bin/towebp.py\n"
+      }
     }
   },
   "packages": [
     {
-      "attr_path": "python3",
+      "attr_path": "python312Packages.click",
       "broken": false,
-      "derivation": "/nix/store/mdsmprmrjc24d5bf2xg5nsp03qix19fh-python3-3.12.9.drv",
-      "description": "High-level dynamically-typed programming language",
-      "install_id": "python3",
-      "license": "Python-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
-      "name": "python3-3.12.9",
-      "pname": "python3",
-      "rev": "c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
-      "rev_count": 768633,
-      "rev_date": "2025-03-15T20:13:08Z",
-      "scrape_date": "2025-03-17T00:32:15Z",
+      "derivation": "/nix/store/s6flkw3932z42sf3jk6acgyb7x2n5xnf-python3.12-click-8.1.8.drv",
+      "description": "Create beautiful command line interfaces in Python",
+      "install_id": "click",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3.12-click-8.1.8",
+      "pname": "click",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:10:14.384801Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "3.12.9",
+      "version": "8.1.8",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/ibnllhp7pc88kgcrxa2gddxcbyl0vngk-python3-3.12.9"
+        "dist": "/nix/store/m95l3kmadma0p7pc1bwrkq8jxqynrgnn-python3.12-click-8.1.8-dist",
+        "out": "/nix/store/mgwi7ql0qs3dbh61npasx7w44gnhfjc2-python3.12-click-8.1.8"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
       "priority": 5
     },
     {
-      "attr_path": "python3",
+      "attr_path": "python312Packages.click",
       "broken": false,
-      "derivation": "/nix/store/47wg9wf5x9lv03w38j45g6jkq7492bz0-python3-3.12.9.drv",
-      "description": "High-level dynamically-typed programming language",
-      "install_id": "python3",
-      "license": "Python-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
-      "name": "python3-3.12.9",
-      "pname": "python3",
-      "rev": "c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
-      "rev_count": 768633,
-      "rev_date": "2025-03-15T20:13:08Z",
-      "scrape_date": "2025-03-17T00:32:15Z",
+      "derivation": "/nix/store/6ivxqm0k7vkv9gdylppm0b3669l1gcl8-python3.12-click-8.1.8.drv",
+      "description": "Create beautiful command line interfaces in Python",
+      "install_id": "click",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3.12-click-8.1.8",
+      "pname": "click",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:27:50.715849Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "3.12.9",
+      "version": "8.1.8",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "debug": "/nix/store/61ksnhxna7vrh315zp36swz4563hfip3-python3-3.12.9-debug",
-        "out": "/nix/store/69nij8d888s5nxm90bwmlza5v1pfniz5-python3-3.12.9"
+        "dist": "/nix/store/l66hl8fl7g6b1jz7jdb9kp5x6b2kzxyq-python3.12-click-8.1.8-dist",
+        "out": "/nix/store/wyjhx6489nf2y5w60qsal227217vh5hl-python3.12-click-8.1.8"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
       "priority": 5
     },
     {
-      "attr_path": "python3",
+      "attr_path": "python312Packages.click",
       "broken": false,
-      "derivation": "/nix/store/m216wld0xa07pb3kwhm5qf2vcxwcd8kp-python3-3.12.9.drv",
-      "description": "High-level dynamically-typed programming language",
-      "install_id": "python3",
-      "license": "Python-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
-      "name": "python3-3.12.9",
-      "pname": "python3",
-      "rev": "c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
-      "rev_count": 768633,
-      "rev_date": "2025-03-15T20:13:08Z",
-      "scrape_date": "2025-03-17T00:32:15Z",
+      "derivation": "/nix/store/wqykyqsjahb54xy6ax00cqk7asx9vvx3-python3.12-click-8.1.8.drv",
+      "description": "Create beautiful command line interfaces in Python",
+      "install_id": "click",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3.12-click-8.1.8",
+      "pname": "click",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:42:49.191012Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "3.12.9",
+      "version": "8.1.8",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/2gr2skg3m0hagibhmhn8fwpvgkg2a3sn-python3-3.12.9"
+        "dist": "/nix/store/8423z3m2cpjq7ivcvfv7c4pi97ag1rgy-python3.12-click-8.1.8-dist",
+        "out": "/nix/store/a80pkj1dh6sgw1nbkymwdhmbkwfzdls8-python3.12-click-8.1.8"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
       "priority": 5
     },
     {
-      "attr_path": "python3",
+      "attr_path": "python312Packages.click",
       "broken": false,
-      "derivation": "/nix/store/7migdv1gw3nv4dl921mk8algfllzricw-python3-3.12.9.drv",
-      "description": "High-level dynamically-typed programming language",
-      "install_id": "python3",
-      "license": "Python-2.0",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
-      "name": "python3-3.12.9",
-      "pname": "python3",
-      "rev": "c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
-      "rev_count": 768633,
-      "rev_date": "2025-03-15T20:13:08Z",
-      "scrape_date": "2025-03-17T00:32:15Z",
+      "derivation": "/nix/store/i07q855qhgrkfigafdb6kd40ph9jkcjl-python3.12-click-8.1.8.drv",
+      "description": "Create beautiful command line interfaces in Python",
+      "install_id": "click",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3.12-click-8.1.8",
+      "pname": "click",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T02:01:30.627370Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "3.12.9",
+      "version": "8.1.8",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "debug": "/nix/store/lax69b07pjgj4ahn4zild8vfqdavy9zm-python3-3.12.9-debug",
-        "out": "/nix/store/wz0j2zi02rvnjiz37nn28h3gfdq61svz-python3-3.12.9"
+        "dist": "/nix/store/wi3vhmn1rlj9v6cddl35kfpa49mmdsvk-python3.12-click-8.1.8-dist",
+        "out": "/nix/store/5sv8vflbfs3q0ybspcn0wjy55mzv1app-python3.12-click-8.1.8"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python312Packages.pillow",
+      "broken": false,
+      "derivation": "/nix/store/9cqczm4q9b2akyhva6v9ikbjpqvhfd3w-python3.12-pillow-11.1.0.drv",
+      "description": "Friendly PIL fork (Python Imaging Library)",
+      "install_id": "pillow",
+      "license": "MIT-CMU",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3.12-pillow-11.1.0",
+      "pname": "pillow",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:10:17.649527Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "11.1.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/1sl96qbgp51y46qqbsnaywnnwvi44cps-python3.12-pillow-11.1.0-dist",
+        "out": "/nix/store/i16zij6pnddrvr7kqb6y91a5aaqhv2bw-python3.12-pillow-11.1.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python312Packages.pillow",
+      "broken": false,
+      "derivation": "/nix/store/iw6j6yygbvchs9fq6x0pcv9nds3rk3n7-python3.12-pillow-11.1.0.drv",
+      "description": "Friendly PIL fork (Python Imaging Library)",
+      "install_id": "pillow",
+      "license": "MIT-CMU",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3.12-pillow-11.1.0",
+      "pname": "pillow",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:27:55.804596Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "11.1.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/cdrjdilz55kzgkp9nad3qhr725amn43c-python3.12-pillow-11.1.0-dist",
+        "out": "/nix/store/2q8wkjg1nbmszbggcx8ixdwpg51arp1j-python3.12-pillow-11.1.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python312Packages.pillow",
+      "broken": false,
+      "derivation": "/nix/store/cgaywlrmasc3zhdzw1dwb5vcv7jxkn29-python3.12-pillow-11.1.0.drv",
+      "description": "Friendly PIL fork (Python Imaging Library)",
+      "install_id": "pillow",
+      "license": "MIT-CMU",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3.12-pillow-11.1.0",
+      "pname": "pillow",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:42:52.423689Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "11.1.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/9v6a2yyz7srx4inay7x6v4wr295kz8bn-python3.12-pillow-11.1.0-dist",
+        "out": "/nix/store/1zfqgdz48qjl0db85gp83ysxg4rlgbv8-python3.12-pillow-11.1.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python312Packages.pillow",
+      "broken": false,
+      "derivation": "/nix/store/l8l45l34a1n2g3394bab4zn8hwjmphh0-python3.12-pillow-11.1.0.drv",
+      "description": "Friendly PIL fork (Python Imaging Library)",
+      "install_id": "pillow",
+      "license": "MIT-CMU",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3.12-pillow-11.1.0",
+      "pname": "pillow",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T02:01:36.192834Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "11.1.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/2x79b1gsyr98jgrjqcp92r4mp283dd3m-python3.12-pillow-11.1.0-dist",
+        "out": "/nix/store/cdn1qgncn3pzs7b3mzryfb7a8p83azp3-python3.12-pillow-11.1.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python312",
+      "broken": false,
+      "derivation": "/nix/store/cb1gsjqlf1dzry390xrsl6ghpaqmsaxd-python3-3.12.9.drv",
+      "description": "High-level dynamically-typed programming language",
+      "install_id": "python3",
+      "license": "Python-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3-3.12.9",
+      "pname": "python312",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:10:13.474481Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3-3.12.9",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/3p3agnh4792y8bgjp0s8xx5bym1ahpks-python3-3.12.9"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python312",
+      "broken": false,
+      "derivation": "/nix/store/cvm8irmg5j24v0iqk8w6z254jcl9vjzd-python3-3.12.9.drv",
+      "description": "High-level dynamically-typed programming language",
+      "install_id": "python3",
+      "license": "Python-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3-3.12.9",
+      "pname": "python312",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:27:49.346924Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3-3.12.9",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/p2ym34g9y2w9k3w2pgbj2akn7b5l6xlh-python3-3.12.9-debug",
+        "out": "/nix/store/cxhrrsf7spcgdkrxmlbfzc1bh46rzf7w-python3-3.12.9"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python312",
+      "broken": false,
+      "derivation": "/nix/store/xzh86qk42dj8pqq3v9qay3ckvb97hyi3-python3-3.12.9.drv",
+      "description": "High-level dynamically-typed programming language",
+      "install_id": "python3",
+      "license": "Python-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3-3.12.9",
+      "pname": "python312",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T01:42:48.352036Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3-3.12.9",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/8fw6a4is5mkpmr9vd80inz63qdi130m3-python3-3.12.9"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python312",
+      "broken": false,
+      "derivation": "/nix/store/0mg12776wbbfzw2fdslyhir14cw1cgfj-python3-3.12.9.drv",
+      "description": "High-level dynamically-typed programming language",
+      "install_id": "python3",
+      "license": "Python-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "name": "python3-3.12.9",
+      "pname": "python312",
+      "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+      "rev_count": 775060,
+      "rev_date": "2025-03-27T17:14:43Z",
+      "scrape_date": "2025-03-29T02:01:29.132253Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3-3.12.9",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/1kjknndig10774mkf6b2b95kn17q4rm5-python3-3.12.9-debug",
+        "out": "/nix/store/f2krmq3iv5nibcvn4rw7nrnrciqprdkh-python3-3.12.9"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
