@@ -13,26 +13,10 @@
         "pkg-path": "python312"
       }
     },
-    "hook": {
-      "on-activate": ""
-    },
-    "profile": {
-      "bash": "  source \"$PYTHON_DIR/bin/activate\"\n",
-      "zsh": "  source \"$PYTHON_DIR/bin/activate\"\n",
-      "fish": "  source \"$PYTHON_DIR/bin/activate.fish\"\n",
-      "tcsh": "  source \"$PYTHON_DIR/bin/activate.csh\"\n"
-    },
-    "options": {
-      "systems": [
-        "aarch64-darwin",
-        "aarch64-linux",
-        "x86_64-darwin",
-        "x86_64-linux"
-      ]
-    },
+    "options": {},
     "build": {
       "towebp": {
-        "command": "mkdir -p $out/bin\ncp towebp.py $out/bin/towebp.py\n"
+        "command": "mkdir -p $out/bin\ncp towebp.py $out/bin/towebp\n"
       }
     }
   },
