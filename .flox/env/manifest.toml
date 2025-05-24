@@ -1,6 +1,7 @@
 version = 1
 
 [build]
+towebp.description="Convert images to WEBP simply and easily"
 towebp.command = '''
 mkdir -p $out/bin
 cp towebp.py $out/bin/towebp

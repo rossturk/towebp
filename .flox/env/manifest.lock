@@ -16,7 +16,8 @@
     "options": {},
     "build": {
       "towebp": {
-        "command": "mkdir -p $out/bin\ncp towebp.py $out/bin/towebp\n"
+        "command": "mkdir -p $out/bin\ncp towebp.py $out/bin/towebp\n",
+        "description": "Convert images to WEBP simply and easily"
       }
     }
   },
